@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ken Kevin Cabanalan — Third-Year Student Developer</title>
+  <meta name="description" content="Portfolio of Ken Kevin Cabanalan, a third-year student developer building web and mobile projects with HTML, CSS, JavaScript, C++, C#, Dart, Python, PHP and SQL.">
+  <meta name="author" content="Ken Kevin Cabanalan">
+  <meta name="theme-color" content="#05080d">
+
+  <!-- Open Graph / social sharing (EDIT: add an absolute og:image URL once you have one) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ken Kevin Cabanalan — Third-Year Student Developer">
+  <meta property="og:description" content="Third-year student developer building web and mobile projects with HTML, CSS, JavaScript, C++, C#, Dart, Python, PHP and SQL.">
+  <meta property="og:url" content="https://example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data so search engines can read the portfolio as a person -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ken Kevin Cabanalan",
+      "givenName": "Ken Kevin",
+      "familyName": "Cabanalan",
+      "jobTitle": "Student Developer",
+      "email": "mailto:kenkevincabanalan0@gmail.com",
+      "description": "Third-year BS Information Technology student at Global Reciprocal Colleges in Caloocan, building web and mobile projects with HTML, CSS, JavaScript, Dart, Python, PHP and SQL.",
+      "sameAs": ["https://github.com/cosme0"],
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Global Reciprocal Colleges"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caloocan",
+        "addressCountry": "PH"
+      },
+      "knowsAbout": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "C++",
+        "C#",
+        "Dart",
+        "Python",
+        "PHP",
+        "SQL",
+        "Flutter"
+      ]
+    }
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Fonts (fall back to system fonts if offline) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Enables JS-only styling (reveal animations etc.) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Three.js import map — every dependency is bundled locally in js/vendor -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./js/vendor/three.module.min.js",
+        "three/addons/": "./js/vendor/addons/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!--
+    ============================================================
+    EDIT ME — all content lives in this one file.
+    Currently personalised for Ken Kevin Cabanalan.
+    Contact: kenkevincabanalan0@gmail.com
+    GitHub:  https://github.com/cosme0
+
+    The 3D companion is a robot built in js/avatar.js with a glowing visor
+    face. Your portrait in assets/images/resume picture.jpg is used only for
+    the About section.
+
+    Still to replace:
+      resume.pdf                  → your real CV
+
+    ============================================================
+  -->
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#/" data-route="home" aria-label="Ken Kevin Cabanalan — home">
+        <span class="brand-mark" aria-hidden="true">KC</span>
+        <span class="brand-text">ken<span class="accent">.cabanalan</span></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a class="nav-link" href="#/" data-route="home" data-nav="home">Home</a>
+        <a class="nav-link" href="#/projects" data-route="projects" data-nav="projects">Projects</a>
+        <a class="nav-link" href="#/about" data-route="about" data-nav="about">About</a>
+        <a class="nav-link" href="#/contact" data-route="contact" data-nav="contact">Contact</a>
+        <a class="btn btn-primary nav-cta" href="#/contact" data-route="contact">Let's talk</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div id="route-announcer" class="sr-only" aria-live="polite"></div>
+
+    <!-- ============================= HOME ============================= -->
+    <section class="page" id="page-home" data-page="home" aria-labelledby="home-title">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-copy stagger">
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open to internships</p>
+            <h1 id="home-title">Hi, I'm <span class="gradient-text">Ken Kevin Cabanalan</span>.<br>I build for web &amp; mobile.</h1>
+            <p class="lead">Third-year student developer working with HTML, CSS, JavaScript, C++, C#, Dart, Python, PHP and SQL — turning what I learn into working web, mobile and software projects.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#/projects" data-route="projects">
+                View my work
+                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+              <a class="btn btn-ghost" href="assets/resume.pdf" download>
+                Download CV
+                <svg class="icon-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              </a>
+            </div>
+            <ul class="socials" aria-label="Social links">
+              <li>
+                <a href="https://github.com/cosme0" target="_blank" rel="noopener" aria-label="GitHub">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:kenkevincabanalan0@gmail.com" aria-label="Email">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="code-card">
+              <div class="code-head">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--amber"></span>
+                <span class="dot dot--green"></span>
+                <span class="code-title">about-me.js</span>
+              </div>
+              <pre class="code-body"><code><span class="tok-com">// hello, world</span>
+<span class="tok-key">const</span> <span class="tok-prop">ken</span> = {
+  role: <span class="tok-str">'student developer'</span>,
+  focus: [<span class="tok-str">'web'</span>, <span class="tok-str">'mobile'</span>, <span class="tok-str">'data'</span>],
+  based: <span class="tok-str">'caloocan'</span>,
+  available: <span class="tok-bool">true</span>,
+};
+
+<span class="tok-key">export default</span> <span class="tok-prop">ken</span>;</code></pre>
+            </div>
+            <span class="floating-tag floating-tag--1">Flutter</span>
+            <span class="floating-tag floating-tag--2">Python</span>
+            <span class="floating-tag floating-tag--3">PHP</span>
+          </div>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <span class="stat-number">3rd</span>
+            <span class="stat-label">Year student</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">34+</span>
+            <span class="stat-label">GitHub repositories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">9</span>
+            <span class="stat-label">Languages used</span>
+          </div>
+        </div>
+
+        <section class="section" aria-labelledby="services-title">
+          <div class="section-head reveal">
+            <p class="eyebrow">What I do</p>
+            <h2 id="services-title">Code, apps &amp; problem-solving</h2>
+            <p class="section-sub">A third-year student who learns by building — from browser interfaces to mobile apps and data-driven systems.</p>
+          </div>
+          <div class="card-grid card-grid--3">
+            <article class="card service-card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4"/><path d="m16 8 4 4-4 4"/><path d="m13 5-2 14"/></svg>
+              </div>
+              <h3>Web development</h3>
+              <p>Responsive pages and interactive interfaces built with HTML, CSS and JavaScript.</p>
+            </article>
+            <article class="card service-card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+              </div>
+              <h3>Mobile apps</h3>
+              <p>Cross-platform mobile projects with Flutter and Dart, from the interface to backend integration.</p>
+            </article>
+            <article class="card service-card reveal">
+              <div class="icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6"/><path d="M4.5 11.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6"/></svg>
+              </div>
+              <h3>Data &amp; systems</h3>
+              <p>Problem-solving with Python, PHP, SQL, C++ and C#, from small scripts to complete systems.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="cta-band reveal" aria-labelledby="cta-title">
+          <div>
+            <p class="eyebrow">Next project</p>
+            <h2 id="cta-title">Have an idea worth building?</h2>
+            <p>I'm currently taking on new projects. Tell me what you're dreaming up.</p>
+          </div>
+          <a class="btn btn-primary" href="#/contact" data-route="contact">
+            Start a conversation
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </section>
+      </div>
+    </section>
+
+    <!-- =========================== PROJECTS =========================== -->
+    <section class="page" id="page-projects" data-page="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="page-head">
+          <p class="eyebrow">Selected work</p>
+          <h1 id="projects-title">Projects</h1>
+          <p class="lead">Projects I've built while studying — web pages, mobile apps and coursework experiments. Everything here is public on GitHub.</p>
+        </header>
+
+        <!-- EDIT: replace project titles, descriptions, tags and links with your own work -->
+        <div class="project-grid stagger">
+          <article class="project-card" style="--accent:#22d3ee;--accent-2:#0ea5e9">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+              <span class="project-index">01</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>Flutter Payment App</h2>
+                <span class="project-year">2026</span>
+              </div>
+              <p>A Flutter app that connects Supabase for its backend and Xendit for payments — my deep dive into real-world mobile integration.</p>
+              <ul class="tags">
+                <li>Flutter</li><li>Dart</li><li>Supabase</li><li>Xendit</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/Flutter_Supabase_Xendit-Payment" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--accent:#a78bfa;--accent-2:#8b5cf6">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1.2"/><rect x="14" y="4" width="6" height="6" rx="1.2"/><rect x="4" y="14" width="6" height="6" rx="1.2"/><rect x="14" y="14" width="6" height="6" rx="1.2"/></svg>
+              <span class="project-index">02</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>Systems Architecture Project</h2>
+                <span class="project-year">2026</span>
+              </div>
+              <p>A PHP system built for my systems architecture course, focused on application structure, core features and working as a complete app.</p>
+              <ul class="tags">
+                <li>PHP</li><li>Web</li><li>Systems</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/sysarch2_project_system" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--accent:#fbbf24;--accent-2:#f59e0b">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 21 7v10l-9 5-9-5V7l9-5Z"/><path d="m3 7 9 5 9-5"/><path d="M12 12v10"/></svg>
+              <span class="project-index">03</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>BMC Final Project</h2>
+                <span class="project-year">2026</span>
+              </div>
+              <p>My final project for a mobile computing course — a complete Flutter app built from the ground up.</p>
+              <ul class="tags">
+                <li>Flutter</li><li>Dart</li><li>Mobile</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/BMC_FINAL_PROJECT" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--accent:#fb7185;--accent-2:#f43f5e">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/></svg>
+              <span class="project-index">04</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>AI Data Representation</h2>
+                <span class="project-year">2026</span>
+              </div>
+              <p>A Python activity exploring how data is represented for AI — created as part of my coursework.</p>
+              <ul class="tags">
+                <li>Python</li><li>AI</li><li>Data</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/dataRepresentation-in-AI" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--accent:#34d399;--accent-2:#10b981">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+              <span class="project-index">05</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>Activity Calendar</h2>
+                <span class="project-year">2025</span>
+              </div>
+              <p>An interactive activity calendar built with HTML, CSS and JavaScript — a small exercise in layout and handling dates.</p>
+              <ul class="tags">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/ACTIVITY-CALENDAR" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" style="--accent:#60a5fa;--accent-2:#3b82f6">
+            <div class="project-thumb" aria-hidden="true">
+              <svg class="project-glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg>
+              <span class="project-index">06</span>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h2>Personal Website v1</h2>
+                <span class="project-year">2025</span>
+              </div>
+              <p>My earlier personal website, built with plain HTML — the project that inspired this portfolio.</p>
+              <ul class="tags">
+                <li>HTML</li><li>CSS</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/cosme0/personalwebsite" target="_blank" rel="noopener">View code <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="grid-note reveal">More repositories and class projects on <a class="text-link" href="https://github.com/cosme0" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
+    <!-- ============================= ABOUT ============================ -->
+    <section class="page" id="page-about" data-page="about" aria-labelledby="about-title">
+      <div class="container">
+        <header class="page-head">
+          <p class="eyebrow">Nice to meet you</p>
+          <h1 id="about-title">About me</h1>
+          <p class="lead">Third-year student developer, lifelong learner, and builder of small useful things.</p>
+        </header>
+
+        <div class="about-grid">
+          <div class="portrait-card reveal">
+            <img src="assets/images/resume%20picture.jpg" alt="Ken Kevin Cabanalan in graduation attire" width="960" height="960">
+            <span class="portrait-badge"><span class="status-dot" aria-hidden="true"></span> Open to internships</span>
+          </div>
+
+          <div class="about-copy">
+            <h2>Curious by default, building by habit.</h2>
+            <p>I'm Ken Kevin Cabanalan — a third-year student developer who enjoys turning ideas into working software. I've built projects ranging from web pages to Flutter mobile apps, Python activities and PHP systems.</p>
+            <p>I work with HTML, CSS, JavaScript, C++, C#, Dart, Python, PHP, and SQL — and I'm always adding to that list. Right now I'm focused on becoming a well-rounded developer by shipping projects that solve real problems.</p>
+            <p>When I'm not studying, I'm exploring new frameworks, improving my GitHub, or building something just to learn how it works. If you'd like to collaborate or offer an internship, I'd love to hear from you.</p>
+
+            <ul class="facts">
+              <li><span>Location</span><strong>Caloocan, Philippines</strong></li>
+              <li><span>Focus</span><strong>Web &amp; mobile development</strong></li>
+              <li><span>Currently</span><strong>Third-year student</strong></li>
+              <li><span>Email</span><strong><a href="mailto:kenkevincabanalan0@gmail.com">kenkevincabanalan0@gmail.com</a></strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <section class="section" aria-labelledby="skills-title">
+          <div class="section-head reveal">
+            <p class="eyebrow">Toolkit</p>
+            <h2 id="skills-title">Skills &amp; tools</h2>
+            <p class="section-sub">The languages and tools I use for coursework, personal projects and experiments.</p>
+          </div>
+          <div class="skills-grid">
+            <div class="skill-group reveal">
+              <h3>Languages</h3>
+              <ul class="chips">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Dart</li>
+                <li>Python</li>
+                <li>PHP</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+            <div class="skill-group reveal">
+              <h3>Frameworks &amp; platforms</h3>
+              <ul class="chips">
+                <li>Flutter</li>
+                <li>Supabase</li>
+                <li>Firebase</li>
+                <li>Xendit</li>
+              </ul>
+            </div>
+            <div class="skill-group reveal">
+              <h3>Tools</h3>
+              <ul class="chips">
+                <li>Git &amp; GitHub</li>
+                <li>VS Code</li>
+                <li>Chrome DevTools</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" aria-labelledby="experience-title">
+          <div class="two-col">
+            <div class="timeline-block reveal">
+              <p class="eyebrow">What I've been building</p>
+              <h2 id="experience-title">Projects &amp; activities</h2>
+              <ol class="timeline">
+                <li>
+                  <span class="time">2026 — Now</span>
+                  <h3>Third-year student developer</h3>
+                  <p>Balancing coursework with personal projects in web, mobile and AI — and learning in public on GitHub.</p>
+                </li>
+                <li>
+                  <span class="time">2026</span>
+                  <h3>Payment integration project</h3>
+                  <p>Built a Flutter app connecting Supabase for data and Xendit for payments, from the interface to the payment flow.</p>
+                </li>
+                <li>
+                  <span class="time">2025</span>
+                  <h3>Started my GitHub journey</h3>
+                  <p>Published class projects and personal experiments while learning Git, version control and how to ship.</p>
+                </li>
+              </ol>
+            </div>
+
+            <div class="timeline-block reveal">
+              <p class="eyebrow">Where I study</p>
+              <h2>Education</h2>
+              <ol class="timeline">
+                <li>
+                  <span class="time">3rd Year</span>
+                  <h3>BS in Information Technology · Global Reciprocal Colleges</h3>
+                  <p>Currently in my third year at Global Reciprocal Colleges in Caloocan, expected to graduate in 2028.</p>
+                </li>
+                <li>
+                  <span class="time">Ongoing</span>
+                  <h3>Self-taught &amp; coursework</h3>
+                  <p>Learning through projects in Flutter, Python, PHP, JavaScript and more — one build at a time.</p>
+                </li>
+              </ol>
+              <div class="note-card">
+                <p><strong>Currently exploring:</strong> Flutter, Supabase, AI data representation, and building better web interfaces.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-band reveal" aria-labelledby="about-cta-title">
+          <div>
+            <p class="eyebrow">Say hello</p>
+            <h2 id="about-cta-title">Let's learn and build together.</h2>
+            <p>I'm open to internships, collaborations and student projects.</p>
+          </div>
+          <a class="btn btn-primary" href="#/contact" data-route="contact">
+            Get in touch
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
+        </section>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT =========================== -->
+    <section class="page" id="page-contact" data-page="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <header class="page-head">
+          <p class="eyebrow">Say hello</p>
+          <h1 id="contact-title">Let's build something good.</h1>
+          <p class="lead">Got a project, an internship, or just a question? I'm all ears. I usually reply within a day or two.</p>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <a class="email-link" href="mailto:kenkevincabanalan0@gmail.com" data-contact-email="kenkevincabanalan0@gmail.com">kenkevincabanalan0@gmail.com</a>
+            <button class="copy-btn" type="button" data-copy="kenkevincabanalan0@gmail.com">Copy email</button>
+
+            <div class="availability">
+              <span class="status-dot" aria-hidden="true"></span>
+              Open to internships &amp; collaborations
+            </div>
+
+            <ul class="social-list" aria-label="Social links">
+              <li>
+                <a href="https://github.com/cosme0" target="_blank" rel="noopener">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.42 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 2.87-.39c.97 0 1.95.13 2.87.39 2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.84 1.18 3.1 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.68.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+                  </span>
+                  <span class="social-name">GitHub</span>
+                  <span class="social-handle">@cosme0</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:kenkevincabanalan0@gmail.com">
+                  <span class="social-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                  </span>
+                  <span class="social-name">Email</span>
+                  <span class="social-handle">kenkevincabanalan0@gmail.com</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form card reveal" id="contact-form">
+            <div class="field">
+              <label for="contact-name">Name</label>
+              <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" required>
+            </div>
+            <div class="field">
+              <label for="contact-email">Email</label>
+              <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="ada@example.com" required>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your idea…" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              Send message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+            <p class="form-note">This opens your email app with the message ready to send — no data leaves this page.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Ken Kevin Cabanalan. Built by hand with HTML, CSS &amp; Three.js.</p>
+      <div class="footer-links">
+        <a href="#/" data-route="home">Home</a>
+        <a href="#/projects" data-route="projects">Projects</a>
+        <a href="https://github.com/cosme0" target="_blank" rel="noopener">GitHub</a>
+        <button class="link-btn" type="button" data-back-top>Back to top &uarr;</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 3D companion: a robot with a glowing face that hovers and waves -->
+  <aside class="avatar-companion" id="avatar-companion" aria-hidden="true">
+    <div class="avatar-bubble" id="avatar-bubble"></div>
+    <div class="avatar-stage">
+      <div class="avatar-glow"></div>
+      <div class="avatar-shadow"></div>
+      <div class="avatar-canvas" id="avatar-canvas"></div>
+    </div>
+  </aside>
+
+  <noscript>
+    <p class="noscript-note">This site uses JavaScript for page transitions and the 3D avatar. Everything is still readable, but please enable JavaScript for the full experience.</p>
+  </noscript>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
