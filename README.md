@@ -148,3 +148,4 @@ and the `url` in the structured-data block in `index.html`.
 - Fonts: Inter and Space Grotesk via Google Fonts (optional).
 # personal_resume
 # personal_resume
+# personal_resume
