@@ -52,7 +52,6 @@ still placeholders:
 | What | Where | Replace with |
 |---|---|---|
 | `assets/resume.pdf` | Download CV button | Real CV (keep the filename or update the link) |
-| `https://example.com/` | `<head>` `og:url` | Real deployed URL |
 
 Contact email: `kenkevincabanalan0@gmail.com` — if it changes, update
 `index.html` (hero, about, contact) and the fallback in `js/main.js`.
@@ -106,11 +105,20 @@ it, keeping the form completely clear.
 
 ## Deploy
 
-Any static host works. Drag the whole folder into Netlify, or push it to
-[github.com/cosme0](https://github.com/cosme0) and enable GitHub Pages. No build
-step is needed.
+The site is live at **https://cosme0.github.io/personal_resume/**.
 
-After deploying, update the `og:url` meta tag in `index.html`.
+Every push to `main` runs `.github/workflows/deploy-pages.yml`, which copies
+the static files and publishes them to GitHub Pages. There is no build step.
+To publish a change, commit and push:
+
+```bash
+git add -A && git commit -m "Update content" && git push
+```
+
+Progress and history: the repository's **Actions** tab. Any other static host
+still works too — the folder can be dragged into Netlify or Cloudflare Pages
+unchanged. If you move to a custom domain, update `og:url`, the canonical link
+and the `url` in the structured-data block in `index.html`.
 
 ## Credits
 
