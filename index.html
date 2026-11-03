@@ -580,15 +580,49 @@
     </div>
   </footer>
 
-  <!-- 3D companion: a robot with a glowing face that hovers and waves -->
-  <aside class="avatar-companion" id="avatar-companion" aria-hidden="true">
-    <div class="avatar-bubble" id="avatar-bubble"></div>
-    <div class="avatar-stage">
+  <!-- 3D companion: a robot with a glowing face that hovers, waves and chats -->
+  <aside class="avatar-companion" id="avatar-companion">
+    <div class="avatar-bubble" id="avatar-bubble" role="status" aria-live="polite"></div>
+    <div class="avatar-stage" aria-hidden="true">
       <div class="avatar-glow"></div>
       <div class="avatar-shadow"></div>
       <div class="avatar-canvas" id="avatar-canvas"></div>
     </div>
+    <button class="avatar-chat-toggle" id="avatar-chat-toggle" type="button" aria-expanded="false" aria-controls="avatar-chat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H8l-4.5 3v-6.4A8.5 8.5 0 0 1 11.5 3h1A8.5 8.5 0 0 1 21 11.5Z"/><path d="M8.5 10.5h7"/><path d="M8.5 14h4"/></svg>
+      <span>Ask KC</span>
+    </button>
   </aside>
+
+  <!-- Robot chat. Answers come from Puter.js in the browser, so the site
+       needs no backend and stores no API key. -->
+  <section class="avatar-chat" id="avatar-chat" aria-hidden="true" aria-label="Chat with KC, the robot">
+    <header class="avatar-chat-head">
+      <span class="avatar-chat-title">
+        <span class="avatar-chat-led" aria-hidden="true"></span>
+        KC
+        <span class="avatar-chat-sub">AI assistant</span>
+      </span>
+      <span class="avatar-chat-actions">
+        <button class="avatar-chat-icon" id="avatar-chat-voice" type="button" aria-pressed="false" title="Let the robot speak" aria-label="Let the robot speak">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6.5 9H3v6h3.5L11 19V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 6a9 9 0 0 1 0 12"/></svg>
+        </button>
+        <button class="avatar-chat-icon" id="avatar-chat-close" type="button" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </span>
+    </header>
+
+    <div class="avatar-chat-log" id="avatar-chat-log" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+    <form class="avatar-chat-form" id="avatar-chat-form">
+      <input id="avatar-chat-input" type="text" autocomplete="off" maxlength="500" placeholder="Ask about skills, projects, contact…" aria-label="Your message">
+      <button class="avatar-chat-send" id="avatar-chat-send" type="submit" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </button>
+    </form>
+    <p class="avatar-chat-note">AI answers can be wrong — email Ken to be sure.</p>
+  </section>
 
   <noscript>
     <p class="noscript-note">This site uses JavaScript for page transitions and the 3D avatar. Everything is still readable, but please enable JavaScript for the full experience.</p>

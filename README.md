@@ -36,6 +36,7 @@ css/style.css              Theme, layout, transitions, responsive rules
 js/main.js                 Mobile nav, scroll reveals, copy email, contact form
 js/router.js               Hash routing + page transition orchestration
 js/avatar.js               Three.js scene + the animated robot companion
+js/assistant.js            Robot chat: Puter.js answers, speech, fallbacks
 js/vendor/                 Three.js runtime (bundled locally)
 assets/images/             Portrait photo (used for the About section)
 assets/resume.pdf          Placeholder CV (replace with your real one)
@@ -68,6 +69,26 @@ Other optional updates:
 - Project descriptions in the Projects section — the current wording is
   cautious because the GitHub repos have no README files.
 - A social preview image (`og:image`) after deploying.
+
+## Robot chat (KC)
+
+The robot answers questions about Ken. Click the robot or the **Ask KC** pill
+next to it to open the chat.
+
+Answers come from [Puter.js](https://developer.puter.com), which runs in the
+browser. That keeps the site static: there is no backend and no API key in the
+repository. Puter uses a user-pays model, so a visitor signs in to a free Puter
+account the first time the AI is used — the "Sign in to chat" button in the
+panel handles that. Until then, and whenever the AI call fails or times out,
+the robot answers from the local table in `js/assistant.js`.
+
+- Persona and facts: `SYSTEM_PROMPT` and `PROFILE` in `js/assistant.js`.
+- Offline answers: the `FALLBACKS` array in the same file.
+- Voice: the speaker button in the panel header uses the browser's speech
+  synthesis. It is off by default and remembered per browser; the robot's
+  mouth animates while it talks either way.
+- Nothing about the conversation is stored on the site — history lives in the
+  page and is cleared on reload.
 
 ## Customise the 3D companion
 

@@ -5,6 +5,7 @@
 
 import { initAvatar } from "./avatar.js";
 import { initRouter } from "./router.js";
+import "./assistant.js";
 
 initAvatar();
 initRouter();

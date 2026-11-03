@@ -87,6 +87,7 @@ function init() {
   let pointerRotation = 0;
   let waveStartedAt = -1;
   let ready = false;
+  let speaking = false;
 
   const startTime = performance.now();
   const now = () => (performance.now() - startTime) / 1000;
@@ -681,14 +682,14 @@ function init() {
 
   /* --------------------------- Animation ---------------------------- */
 
-  function showBubble(message) {
+  function showBubble(message, duration = 2600) {
     if (!BUBBLE || !message) return;
     BUBBLE.textContent = message;
     BUBBLE.classList.add("is-visible");
     window.clearTimeout(bubbleTimer);
     bubbleTimer = window.setTimeout(() => {
       BUBBLE.classList.remove("is-visible");
-    }, 2600);
+    }, duration);
   }
 
   function triggerWave(message) {
@@ -697,6 +698,13 @@ function init() {
 
     waveStartedAt = now();
     if (!rafId) startLoop();
+  }
+
+  // Used by the chat: the robot says something without waving.
+  function triggerSay(message, duration) {
+    if (!message) return;
+    showBubble(message, duration);
+    if (!rafId && !reduceMotion.matches) startLoop();
   }
 
   function animate(t) {
@@ -755,6 +763,12 @@ function init() {
         : 1;
     eyeHaloMaterial.opacity = 0.22 + Math.sin(t * 2.4) * 0.08;
     visorMaterial.emissiveIntensity = 0.6 + Math.sin(t * 1.3) * 0.15;
+
+    // Talking: the visor mouth opens and closes while the robot speaks.
+    const mouthTarget = speaking ? 0.7 + Math.abs(Math.sin(t * 9)) * 0.85 : 1;
+    const mouthY = avatar.mouth.scale.y + (mouthTarget - avatar.mouth.scale.y) * 0.35;
+    avatar.mouth.scale.set(1 + (mouthY - 1) * 0.18, mouthY, 1);
+    if (speaking) headGroup.rotation.x += Math.sin(t * 6.2) * 0.007;
 
     // Antenna tip blinks like a status light.
     const blink = (Math.sin(t * 3.1) + 1) / 2;
@@ -825,6 +839,16 @@ function init() {
 
   window.addEventListener("avatar:wave", (event) => {
     triggerWave(event.detail?.message);
+  });
+
+  window.addEventListener("avatar:say", (event) => {
+    triggerSay(event.detail?.message, event.detail?.duration);
+  });
+
+  // The chat module raises this while an answer is being spoken or streamed.
+  window.addEventListener("avatar:speak", (event) => {
+    speaking = Boolean(event.detail?.speaking);
+    if (speaking && !rafId && !reduceMotion.matches) startLoop();
   });
 
   if (!reduceMotion.matches) {
