@@ -947,10 +947,12 @@ main {
 .project-thumb--photo::after {
   background-image: linear-gradient(
     to top,
-    rgba(5, 10, 15, 0.88) 0%,
-    rgba(5, 10, 15, 0.3) 30%,
-    transparent 58%
+    rgba(5, 10, 15, 0.72) 0%,
+    rgba(5, 10, 15, 0.22) 20%,
+    transparent 40%
   );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   -webkit-mask-image: none;
   mask-image: none;
 }
@@ -988,6 +990,11 @@ main {
   font-weight: 700;
   line-height: 1;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.18);
+}
+
+.project-thumb--photo .project-index {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  text-shadow: 0 1px 3px rgba(5, 10, 15, 0.55), 0 10px 26px rgba(5, 10, 15, 0.5);
 }
 
 .project-body {
