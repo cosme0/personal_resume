@@ -39,6 +39,7 @@ js/avatar.js               Three.js scene + the animated robot companion
 js/assistant.js            Robot chat: Puter.js answers, speech, fallbacks
 js/vendor/                 Three.js runtime (bundled locally)
 assets/images/             Portrait photo (used for the About section)
+assets/images/projects/    Screenshots shown on the project cards
 assets/resume.pdf          Placeholder CV (replace with your real one)
 server.js                  Zero-dependency local dev server
 ```
